@@ -1,0 +1,6 @@
+{
+  "name": "The Tiebreaker",
+  "description": "Інтелектуальний інструмент для прийняття рішень на базі Gemini, який розбирає складні дилеми за допомогою списків «за» і «проти», порівняльних таблиць та SWOT-аналізу.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
