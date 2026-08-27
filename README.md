@@ -1,43 +1,160 @@
-# The Tiebreaker UA App
+# The Tiebreaker UA 🇺🇦
 
-An AI-assisted decision-support application designed to help compare alternatives and make more structured choices.
+**The Tiebreaker UA** — україномовний AI-застосунок для структурованого аналізу альтернатив і підтримки прийняття рішень, створений у **Google AI Studio** з використанням моделей **Google Gemini**.
 
-## Overview
+Застосунок допомагає порівнювати два або більше варіантів рішення, аналізувати їхні переваги, недоліки, ризики та можливості й формувати аргументовану рекомендацію.
 
-The Tiebreaker UA App was created as a practical AI application prototype using Google AI Studio.
+## Основні можливості
 
-The purpose of the application is to help users compare options using defined criteria and support a more transparent decision-making process.
+* **Плюси та мінуси** — структурований аналіз переваг і недоліків кожного варіанта.
+* **Таблиця порівняння** — оцінювання альтернатив за декількома критеріями.
+* **SWOT-аналіз**:
 
-## Key Features
+  * сильні сторони;
+  * слабкі сторони;
+  * можливості;
+  * загрози.
+* **Багатокритеріальна оцінка** з можливістю враховувати важливість окремих факторів.
+* **Фінальний вердикт** із поясненням логіки рекомендації.
+* **Рівень впевненості** в запропонованому рішенні.
+* **Адвокат диявола** — перевірка рішення через пошук контраргументів і потенційних слабких місць.
+* **Приховані припущення та сліпі зони** — виявлення факторів, які користувач міг не врахувати.
+* **Правило 10/10/10** — аналіз можливих наслідків рішення в коротко-, середньо- та довгостроковій перспективі.
+* **Рекомендовані наступні кроки** після прийняття рішення.
+* **Історія рішень**.
+* **Експорт результатів**.
+* Додаткові допоміжні інструменти для аналізу рішень.
 
-* Comparison of multiple alternatives
-* Structured evaluation of available options
-* Interactive user interface
-* AI-assisted analysis
-* Support for clearer and more consistent decision-making
-* Ukrainian-language user experience
+## Українська локалізація
 
-## Technologies
+Застосунок повністю адаптований для україномовного користувача.
 
-* Google AI Studio
-* React
-* TypeScript
-* Vite
+Українською мовою формуються:
 
-## Project Purpose
+* інтерфейс;
+* назви розділів;
+* критерії оцінювання;
+* пояснення;
+* рекомендації;
+* результати порівняння;
+* SWOT-аналіз;
+* фінальний вердикт;
+* наступні кроки.
 
-This project was created as part of practical learning and experimentation with AI-powered application development.
+Користувач може вводити початкове питання українською або англійською, однак результати аналізу за замовчуванням формуються українською мовою.
 
-The focus of the project is not only on the final interface, but also on understanding how AI can be integrated into a structured decision-support workflow.
+## Приклад використання
 
-## Repository
+Користувач задає питання:
 
-This repository contains the source code generated and refined in Google AI Studio.
+**Що краще обрати: варіант A чи варіант B?**
 
-The project can be further extended with additional criteria, weighting mechanisms, explanations of recommendations, data persistence, and other decision-support functionality.
+Наприклад:
 
-## Security
+* купити смартфон зараз чи почекати пів року;
+* вибрати одну з двох пропозицій роботи;
+* використати freemium-модель чи фіксовану щомісячну підписку;
+* обрати між двома товарами, послугами або сценаріями;
+* порівняти різні бізнес-рішення.
 
-No API keys, credentials, passwords, or other secrets should be committed to this repository.
+The Tiebreaker аналізує альтернативи, структурує аргументи та допомагає побачити фактори, які могли залишитися поза увагою.
 
-Environment-specific secrets should be stored securely outside the source code.
+## Принцип роботи
+
+Загальна логіка:
+
+**Питання → Варіанти → Критерії → AI-аналіз → Порівняння → Ризики та можливості → Вердикт → Наступні кроки**
+
+The Tiebreaker є інструментом **decision support (підтримки прийняття рішень)**, а не системою, яка повинна приймати рішення замість користувача.
+
+## Технології
+
+Проєкт створено за допомогою:
+
+* **Google AI Studio**
+* **Google Gemini API**
+* **TypeScript**
+* **Vite**
+* GitHub для version control (контролю версій) та резервного зберігання коду.
+
+## Безпека
+
+Реальний Gemini API key не зберігається у вихідному коді репозиторію.
+
+Для конфігурації використовується змінна середовища:
+
+```env
+GEMINI_API_KEY="MY_GEMINI_API_KEY"
+```
+
+Файл `.env.example` містить лише шаблон конфігурації.
+
+Файли із реальними секретами виключені з Git через `.gitignore`:
+
+```text
+.env*
+!.env.example
+```
+
+API-ключі та інші секретні значення не повинні додаватися безпосередньо до вихідного коду або GitHub-репозиторію.
+
+## Структура репозиторію
+
+Основні елементи проєкту:
+
+```text
+the-tiebreaker-ua-app/
+├── assets/
+├── src/
+├── .env.example
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── server.ts
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+## Резервне копіювання
+
+GitHub-репозиторій використовується як незалежна резервна копія проєкту та історії його змін.
+
+Робоча версія застосунку підтримується в Google AI Studio, а важливі зміни синхронізуються з GitHub через GitHub Sync.
+
+Це дозволяє:
+
+* зберігати історію версій;
+* відновити код у разі проблем із Google AI Studio;
+* експортувати проєкт;
+* розгорнути його на іншій платформі;
+* продовжувати розробку незалежно від AI Studio.
+
+## Поточний статус
+
+**Прототип / навчальний AI-проєкт**
+
+Основна функціональність працює та протестована на різних типах рішень.
+
+Проєкт може надалі розвиватися в напрямках:
+
+* адаптивного вибору критеріїв залежно від типу рішення;
+* кращого кількісного оцінювання альтернатив;
+* збереження користувацьких сценаріїв;
+* розширення механізмів перевірки припущень;
+* додаткової візуалізації результатів;
+* окремого публічного веброзгортання.
+
+## Важливе застереження
+
+Рекомендації The Tiebreaker генеруються штучним інтелектом і можуть містити помилки, неточності або неповні припущення.
+
+Результат слід використовувати як **додатковий аналітичний інструмент**, а не як єдину підставу для фінансових, юридичних, медичних, кадрових або інших рішень із високими наслідками.
+
+Кінцеве рішення завжди залишається за користувачем.
+
+---
+
+**The Tiebreaker UA**
+AI-powered decision support application created with Google AI Studio and Gemini.
